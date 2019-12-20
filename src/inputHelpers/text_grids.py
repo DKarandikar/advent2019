@@ -14,4 +14,4 @@ def parse_text_grid_to_numpy_array(filename: str) -> np.array:
                 lineLength = len(line)
             rv.append([char for char in line if char != "\n"])
 
-    return np.array(rv)
+    return np.array(rv).swapaxes(0, 1)

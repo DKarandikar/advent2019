@@ -1,5 +1,5 @@
+from collections import deque
 from dataclasses import dataclass, field
-from queue import Queue
 from typing import TypeVar, List, Dict
 
 T = TypeVar("T")
@@ -28,29 +28,17 @@ class Graph:
         for node in self.graph.values():
             node.visited = False
 
-        queue: Queue[Node] = Queue()
-        queue.put(self.graph[start])
+        queue: deque[Node] = deque()
+        queue.append(self.graph[start])
         self.graph[start].visited = True
 
         while queue:
-            s = queue.get()
+            s = queue.popleft()
             if s.label == end:
                 return s
 
             for i in s.edges:
                 if not i.visited:
-                    queue.put(i)
+                    queue.append(i)
                     i.visited = True
                     i.history = s.history + [s.label]
-
-# g = Graph()
-# g.addEdge(0, 1)
-# g.addEdge(0, 2)
-# g.addEdge(1, 2)
-# g.addEdge(2, 0)
-# g.addEdge(2, 3)
-# g.addEdge(3, 3)
-# 
-# print("Following is Breadth First Traversal"
-#       " (starting from vertex 2)")
-# print(g.BFS(2, 1))
