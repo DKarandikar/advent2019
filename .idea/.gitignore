@@ -1,0 +1,7 @@
+# Default ignored files
+/workspace.xml
+/misc.xml
+/vcs.xml
+/inspectionProfiles/*
+/modules.xml
+/advent2019.iml
