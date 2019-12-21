@@ -1,11 +1,12 @@
 import copy
 
+from src.input_helpers.input_path import get_input_file
 from src.input_helpers.read_intcode import parse_list_of_ints
 from src.logic_helpers.intcode import IntCodeComputer
 
 
 def main():
-    program = parse_list_of_ints("../inputData/day2input")
+    program = parse_list_of_ints(get_input_file("day2input"))
     part1 = copy.deepcopy(program)
     part1[1] = 12
     part1[2] = 2

@@ -1,10 +1,11 @@
+from src.input_helpers.input_path import get_input_file
 from src.input_helpers.read_intcode import parse_list_of_ints
 from src.logic_helpers.intcode import IntCodeComputer
 
 
 class TestAdditionMultiplication():
     def test_day_2_example_1(self):
-        rv = parse_list_of_ints("../../inputData/day2test1")
+        rv = parse_list_of_ints(get_input_file("day2test1"))
         computer = IntCodeComputer(rv, pad_program=False)
         rv, code = computer.run_until_input_or_done()
         assert rv == []

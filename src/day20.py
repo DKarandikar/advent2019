@@ -4,6 +4,7 @@ from typing import Tuple
 import numpy as np
 import networkx as nx
 
+from src.input_helpers.input_path import get_input_file
 from src.input_helpers.text_grids import parse_text_grid_to_numpy_array
 
 
@@ -93,9 +94,9 @@ def get_shortest_distance_start_to_end_layers(filename: str):
 
 
 def main():
-    part1 = get_shortest_distance_start_to_end(".././inputData/day20part1")
+    part1 = get_shortest_distance_start_to_end(get_input_file("day20part1"))
     print(f"Part 1 shortest is {part1}")
-    part2 = get_shortest_distance_start_to_end_layers(".././inputData/day20part1")
+    part2 = get_shortest_distance_start_to_end_layers(get_input_file("day20part1"))
     print(f"Part 2 shortest is {part2}")
 
 
