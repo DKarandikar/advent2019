@@ -4,7 +4,7 @@ from typing import Tuple
 import numpy as np
 import networkx as nx
 
-from src.inputHelpers.text_grids import parse_text_grid_to_numpy_array
+from src.input_helpers.text_grids import parse_text_grid_to_numpy_array
 
 
 def createGraphPart1(data: np.array) -> Tuple[nx.Graph, Tuple[int, int], Tuple[int, int]]:
